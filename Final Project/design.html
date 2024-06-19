@@ -1,0 +1,329 @@
+1) PROBLEM STATEMENT
+    A program is needed for users to blog about music.
+    The program should prompt for a name or username on the profile page.
+    The program should display a user's weekly favorite song or artist.
+    The blog should display the user's name and mood as a status. 
+    The blog should have a section to display main instrument played/learning.
+    The blog should ask for user's birthday, plus calculate and display age 
+
+2) NOUNS & VERBS 
+	
+	Nouns: blog, music, songs, username, instruments, name, mood, age
+
+        Verbs: prompt, display, ask, calculate
+
+3) DEFINING DIAGRAM (IPO)
+
+        INPUT: 
+        name,
+        song/artist of the week,
+        mood,
+        instruments,
+        time played,
+        age
+
+        PROCESSING: 
+        prompt for birthYear, birthMonth, birthDay
+        prompt for name
+
+        prompt on-click for song of the week
+
+        prompt on-click for mood
+        calculate mood icon via switch case
+
+        prompt on-click for instruments played/learning
+        prompt for time played of instrument
+        prompt on-click for weekly song/artist
+      
+        
+        calculate age
+        calculate time played of instrument
+
+        display name
+        display mood
+        display instruments
+        display list of favorite songs
+        display age
+     
+        OUTPUT:
+        name,
+        song/artist of the week,
+        mood,
+        instruments,
+        time played, 
+        age
+
+4) SOLUTION ALGORITHM (Pseudocode)
+
+    timePlayed (currentDate, startDate)
+      Initialize timePlayed to 0;
+      Initialize currentYear to 0;
+      Initialize currentMonth to 0;
+      Initialize currentDay to 0;
+
+      timePlayed = Number(currentDate - startDate)  
+
+      CALCULATE currentYear, currentMonth, currentDay
+
+      timePlayed = Number(CurrentYear - startYear)
+     
+      IF timePlayed >= 5 years
+        DISPLAY "This user is an expert at " + instrumentMain + "."
+      ELSE IF timePlayed >= 10 years
+        DISPLAY "This user has mastered " + instrumentMain + "."
+      ELSE IF timePlayed <= 1 year
+        DISPLAY "This user has just started to play " + instrumentMain + ". Congratulate them!"
+      ELSE IF timePlayed > 20 years
+        "This user is a wizard with " + instrumentMain + "!"
+
+      return timePlayed
+    End 
+
+    userMood (mood) 
+      Initialize mood to "";
+      switch(mood) 
+        case "happy":
+          display mini sun icon
+        case "sad"
+          display mini rain icon
+        case "angry"
+          display mini tornado icon
+        case "stressed"
+          display lightning icon
+        default (normal, neutral)
+          display partly cloudly icon
+
+      return mood
+    END
+
+    userName (name) 
+      Initialize name to "";
+      Initialize firstName to "";
+      Initialize lastName to "";
+
+      name = firstName + lastName
+      return name
+    END
+
+    userInstrument (instrumentMain)
+      Initialize instrumentMain to "";
+      Initialize startYear to 0;
+
+      IF startYear = currentYear
+        DISPLAY "Congrats on starting a new instrument this year!"
+      ELSE IF startYear > currentYear || startYear <= 1974
+        DISPLAY "Please enter a valid start date."
+
+      return userName
+    END 
+
+    userBirthday (birthYear, birthMonth, birthDay)
+      Initialize birthYear to 0;
+      Initialize birthMonth to 0;
+      Initialize birthDay to 0;
+      Initialize age to 0;
+
+      IF birthYear <= currentYear - 13
+      DISPLAY "You are not old enough to use this website."
+    ELSE IF birthYear = currentYear
+      DISPLAY "We don't believe you're a newborn. Try again!"
+    ELSE IF birthYear < currentYear - 100
+      DISPLAY "You are younger than 100. Try again!"
+
+      IF birthMonth > 12 || birthMonth < 1
+        DISPLAY "That month doesn't exist. Try again!"
+
+      IF birthMonth = 2 && birthDay > 29
+        DISPLAY "February only has 28 days or 29 days on a leap year. Try again!"
+      ELSE IF (birthMonth = 4 || birthMonth = 6 || birthMonth = 9 || birthMonth = 11) && birthDay > 30
+        DISPLAY "This month doesn't have more than 30 days. Try again!"
+
+      age = currentYear - birthYear
+        IF birthMonth < currentMonth
+          age--
+
+      return userBirthday
+    END
+
+
+    functionMain
+      INITIALIZE userName = "";
+      INITIALIZE weeklySong = "";
+      INITIALIZE instrumentMain = "";
+      INITIALIZE startYear to 0;
+      INITIALIZE timeplayed = 0;
+      INITIALIZE age to 0;
+      INITIALIZE currentYear to 0;
+      INITIALIZE currentMonth to 0;
+      INITIALIZE currentDay to 0;
+      INITIALIZE mood to "";
+      INITIALIZE birthYear to 0;
+      INITIALIZE birthMonth to 0;
+      INITIALIZE birthDay to 0;
+
+
+
+      PROMPT upon page open with "What is your birthYear? ex. 2002, 1989"
+      PROMPT upon page open with "What is your birthMonth? ex. 1, 5"
+      PROMPT upon page open with "What is your birthDay ex. 13, 28?"
+        CALL userBirthday()
+ 
+      PROMPT on-click for userName with "What is your first name?" AND "What is your last name?"
+        CALL userName()
+
+      PROMPT on-click for weeklySong with "What is the song of the week?" AND "What is the artist of the song of the week?"
+
+      PROMPT on-click for instrumentsMain with "What is your main instrument?"
+        PROMPT for startYear with "What year did you start playing this instrument?"
+        CALL userInstrument()
+
+
+      DISPLAY userName
+      DISPLAY weeklySong
+      DISPLAY instrumentMain 
+      DISPLAY timePlayed
+      DISPLAY age
+      DISPLAY mood
+    END
+    
+
+
+
+5) TEST CASES
+
+  	VARIABLES: firstName, lastName, birthYear, birthMonth, 
+    genderIcon, userMood, userInst, startDate, SoTW
+
+        TEST CASE 1:
+          INPUT VALUES:
+           Hannah, Meyers, 2002, 9, Female, Happy, Guitar, 
+           2015, The Quest, Mac Miller
+
+        YOUR EXPECTED RESULT:
+          Hannah Meyers
+          Age: 21
+          Gender icon: Female
+          Mood: Happy
+          Inst: Guitar
+          This user is an expert at their craft. They've played for 9 years.
+          Song of the Week: The Quest, Mac Miller
+
+        YOUR ACTUAL RESULT:
+          Hannah Meyers
+          Age: 21
+          Gender icon: Female
+          Mood: Happy
+          Inst: Guitar
+          This user is an expert at their craft. They've played for 9 years.
+          Song of the Week: The Quest, Mac Miller
+
+        
+        TEST CASE 2:
+          INPUT VALUES: 
+          "", "", 2013, 6, Male, Angry, Percussion, 2011, Ring Of Fire, ""
+
+          YOUR EXPECTED RESULT:
+          Please enter your first name.
+          Please enter your last name. 
+          We require users to be older than 13. 
+          (no month display due to valid month number)
+          Male
+          Angry
+          Please enter a valid instrument! 
+          This user has mastered their craft. They've played for 13 years.
+          Ring of Fire,
+          Please enter the artist's name.
+
+          YOUR ACTUAL RESULT:
+          Please enter your first name. (Filled in valid name to continue)
+          Please enter your last name. (Filled in valid string to continue)
+          We require users to be older than 13. (Filled in valid string to continue)
+          (no month display due to valid month number)
+          Male
+          Angry
+          Please enter a valid instrument! (Filled in valid string to continue)
+          This user has mastered their craft. They've played for 13 years.
+          Ring of Fire,
+          Please enter the artist's name.
+
+         
+        TEST CASE 3:
+          INPUT VALUES: H, M, 1800, 13, abcdef, 
+          upsetti spaghetti, guITaR, 15, 2010, Kate McCannon, ""
+          
+
+          YOUR EXPECTED RESULT:
+          H M 
+          Please enter a valid age.
+          Please enter a valid month number. 1-12
+          Please pick from male, female, or gender neutral.
+          Please enter a valid mood!
+          Guitar icon
+          This user has mastered their craft. They've played for 14 years.
+          Please enter the artist's name (reprompts for artist only)
+          (on-click of Blog Post button) What's your blog post?
+
+          YOUR ACTUAL RESULT:
+          H M 
+          Please enter a valid age.
+          Please enter a valid month number. 1-12
+          Please pick from male, female, or gender neutral.
+          Please enter a valid mood!
+          Guitar icon
+          This user has mastered their craft. They've played for 14 years.
+          Please enter the artist's name (reprompts for artist only)
+          What's your blog post?
+
+
+        TEST CASE 4:
+          INPUT VALUES: John, Doe, 1969, 0, Neutral, Stressed,
+          Violin, 1983, 123 Song Name, 456 Artist
+    
+
+          YOUR EXPECTED RESULT:
+          John Doe
+          Please enter a valid month number. (1-12)
+          Age: 55
+          Gender neutral icon
+          Stressed icon
+          Violin icon
+          This user is a wizard at their craft. They've played for 41 years.
+          User's SoTW: 123 Song Name by 456 Artist.
+
+          ACTUAL RESULT:
+          John Doe
+          Please enter a valid month number. (1-12)
+          Age: 55
+          Gender neutral icon
+          Stressed icon
+          Violin icon
+          This user is a wizard at their craft. They've played for 41 years.
+          User's SoTW: 123 Song Name by 456 Artist.
+
+        TEST CASE 5:
+          INPUT VALUES: 
+          Brock, Sterr, 1999, 06, MALE, Depressed, Drums,
+          2007, Aquarium, ""
+
+          YOUR EXPECTED RESULT:
+          Brock Sterr
+          Age: 24
+          Male icon
+          Please enter a valid mood!
+          Drum icon
+          This user has mastered their craft. They've played for 17 years.
+          Please enter the artist's name!
+          Aquarium, Mac Miller
+
+          YOUR ACTUAL RESULT:
+          Brock Sterr
+          Age: 24
+          Male icon
+          Please enter a valid mood!
+          Drum icon
+          This user has mastered their craft. They've played for 17 years.
+          Please enter the artist's name!
+          Aquarium, Mac Miller
+
+
+         
