@@ -1,0 +1,453 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* colors for copy/paste */
+/* 1A4D2E (dark green)
+4F6F52 (lighter green)
+E8DFCA (medium tan)
+F5EFE6 (light tan)
+
+/*profile.html*/
+#blogbutton {
+    display: none;
+}
+.blogposts {
+    width: 700px;
+    align-content: center;
+    text-align: center;
+    background-color: darkgray;
+    word-wrap: normal;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 50px;
+}
+.blogposts div {
+    text-align: center;
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    letter-spacing: 5px;
+
+}
+#blognumber {
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 15px;
+    margin: 15px;
+}
+.buttons {
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    background-color: rgba(0, 0, 0, 75%);
+}
+p {
+    margin-top: 12px;
+    letter-spacing: 3px;
+    color:#F5EFE6;
+ }
+.profileinfo {
+    min-height: 59vh;
+    background-color: #F5EFE6;
+    animation: ease-in fadeIn 3s;
+    display: flex;
+}
+.icon {
+    display: flex;
+    margin-bottom: 15px;
+    text-align: center;
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    flex-direction: column;
+    margin-right: 15px;
+}
+.iconbutton {
+    background-color: gray;
+    color: whitesmoke;
+    border-radius: 5px;
+    margin: 20px;
+    padding: 3px;
+    justify-content: space-around;
+    align-items: center;
+    margin-left: 30px;
+}
+#ifrm4 {
+    top: 390px;
+}
+#ifrm5 {
+    top: 500px;
+}
+#ifrm6 {
+    top: 630px;
+}
+.funbuttons {
+    display: flex;
+    flex-direction: column;
+    width: 108px;
+}
+
+.solobutton {
+    background-color: gray;
+    color: whitesmoke;
+    border-radius: 5px;
+    margin: 5px;
+    padding: 3px;
+}
+.solobutton:hover, .iconbutton:hover {
+    transform: translateY(-6px);
+    cursor: pointer;
+    transition: 0.3s;
+    background-color: darkgray;
+}
+#textbox1 {
+    width: 300px;
+    height: 200px;
+    margin-bottom: 50px;
+    margin-right: 50px;
+}
+#username, #userbirthday, #usericon, #usermood, #userinstrument, #usertimeplayed, #userweeklysong {
+    width: 200px;
+    padding: 10px;
+}
+.rightside {
+    width: 275px;
+    overflow: hidden;
+    text-align: center;
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    align-items: center;
+}
+.rightside img {
+    width: 125px;
+    height: 125px;
+    margin: 10px;
+    box-shadow: 5px 5px 5px 5px black;
+}
+#rec1 {
+    margin-top: 10px;
+}
+#rec3 {
+    overflow: hidden;
+} 
+#submit {
+    width: 30px;
+    height: 13px;
+}
+
+
+
+
+/*index.html*/
+/*Spotify embed*/
+.ifrm {
+    display: none;
+    position: absolute; 
+}
+iframe {
+    border-style: none;
+}
+#ifrm1, #ifrm2, #ifrm3 {
+    bottom: 15px;
+}
+#ifrm1 {
+    right: 830px;
+}
+#ifrm2 {
+    right: 500px;
+}
+#ifrm3 {
+    right: 180px;
+}
+.albums:hover + .ifrm, .albumsprofile:hover + .ifrm {
+    display: block;
+    animation: ease-in fadeIn 0.5s;
+}
+.ifrm:hover {
+    display: block;
+}
+/*Spotify embed ends here*/
+/*Thanks to Spotify:*/
+    /*https://developer.spotify.com/documentation/embeds
+/*Plans to create and connect music database after second semester*/
+
+
+/*album cover modifications for index.html (.albums) & profile.html(.albumsprofile)*/
+.albums img {
+    height: 210px;
+    width: 210px;
+}
+
+/*smooth raise upon hover*/
+.albums, .albumsprofile, nav li {
+    transition: 0.3s;
+}
+.albums:hover, .albumsprofile:hover, nav li:hover {
+    transform: translateY(-10px);
+    cursor: pointer;
+}
+.albums p {
+    text-align: center;
+    color: white;
+    letter-spacing: 5px;
+}
+
+.burger div {
+    width: 25px;
+    height: 2px;
+    background-color: white;
+    margin: 5.5px;
+    transition: all 0.3s ease;
+}
+.creator {
+    letter-spacing: 18px;
+    text-align: center;
+    font-size: 35px;
+    padding: 25px;
+    background-color: #F5EFE6; 
+    animation: ease-in fadeIn 3s;
+}
+
+h2 {
+    text-align: center;
+    letter-spacing: 3px;
+    padding: 5px;
+    background-color: #F5EFE6; 
+    animation: ease-in fadeIn 3s;
+}
+#formlink {
+    text-decoration: none;
+    color: black;
+}
+#formlink:hover {
+    color: #4F6F52;
+}
+.formpopup {
+    text-align: center;
+    padding-top: 25px;
+    letter-spacing: 5px;
+    background-color: #F5EFE6;
+    min-height: 8vh;
+    margin: auto;
+}
+.formpopup p {
+    animation: ease-in fadeIn 3s;
+    color: black;
+}
+.mysongs {
+    background-color:darkolivegreen;
+    min-height: 65vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}    
+.question {
+    text-align: center;
+    margin-top: 2vh;
+    animation: ease-in fadeIn 3s;
+    padding: 5px;
+    margin: 5px;
+    letter-spacing: 10px;
+}
+.question-box {
+    background-color: darkolivegreen;
+    color: white;
+    padding: 5px;
+}
+.welcome {
+    text-align: center;
+    margin-top: 2vh;
+    animation: ease-in fadeIn 3s;
+    padding: 10px;
+    margin: 5px;
+    letter-spacing: 10px;
+}
+
+/*universal*/
+body {
+    width: 80%;
+    margin: 0 auto;
+    background-image: url(../images/background.jpg);
+    background-size: 100%;
+}
+.boxshadow {
+    box-shadow: 10px 10px 10px 10px rgba(1, 50, 32, 30%);
+}
+.burger {
+    display: none;
+}
+.linkcontainer {
+    display: flex;
+    justify-content: space-around;
+    width: 35%;
+}
+
+.linkcontainer a {
+    color: white;
+    text-decoration: none;
+    letter-spacing: 3px;
+    font-weight: bold;
+}
+
+.linkcontainer li {
+    list-style-type: none;
+}
+.logo {
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 18px;
+}
+.mobilemessage {
+    display: none;
+}
+nav {
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 8vh;
+    background-color:darkolivegreen;
+    margin-top: 50px;
+}
+.sociallinks {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 15px;
+    height: 25%;
+}
+.sociallinks i {
+    transition: 0.5s;
+}
+.sociallinks i:hover {
+    cursor: pointer;
+    transform: translateY(-10px);
+}
+/*media.html*/
+.comingsoon {
+    text-align: center;
+    font-size: 50px;
+    margin-top: 5vh;
+}
+
+/*mobile css*/
+
+@media screen  and (max-width: 1310px){
+    #album1 img, #album2 img, #album3 img {
+        height: 175px;
+        width: 175px;
+    }
+    .albums:hover + .ifrm {
+        display: none;
+    }
+    .blogposts {
+        width: 40%;
+    } 
+    body {
+        width: 70%;
+    }
+    .linkcontainer {
+        width: 65%;
+    }
+}
+@media screen  and (max-width: 1146px){
+    .rightside {
+        display: none;
+    }
+}
+@media screen  and (max-width: 910px){
+    #album1 img, #album2 img, #album3 img {
+        height: 150px;
+        width: 150px;
+    }
+    .albums:hover + .ifrm {
+        display: none;
+    }
+    body {
+        overflow-x: hidden;
+        width: 100%;
+    }
+    #blogbutton {
+        display: block;
+    }
+    #blognumberone {
+       margin-right: 200px;
+    }
+    .blogposts {
+        display: flex;
+        flex-direction: column;
+    }
+    .burger {
+        display: block;
+        cursor: pointer;
+    }
+    .desktopmessage {
+        display: none;
+    }
+    .linkcontainer {
+        position: absolute;
+        right: 0px;
+        height: 92vh;
+        top: 8vh;
+        background-color:darkolivegreen;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 35%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+    }
+    .linkcontainer li {
+        opacity: 0;
+    }
+    .mobilemessage {
+        display: block;
+    }
+    #textbox1 {
+      display: none;
+    }
+    .rightside {
+        display: none;
+    }
+}
+
+/* animations */
+.nav-active {
+    transform: translateX(0%);
+}
+@keyframes linkContainerFade {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+.toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+.toggle .line2 {
+    opacity: 0;
+}
+.toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
